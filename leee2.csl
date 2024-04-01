@@ -312,10 +312,9 @@
       <key variable="citation-number"/>
     </sort>
     <layout delimiter=", ">
-      <group prefix="[" delimiter=", " vertical-align="sup">
+      <group prefix="[" suffix="]" delimiter=", " vertical-align="sup">
         <text variable="citation-number"/>
         <text macro="citation-locator"/>
-        <text suffix="]" "/>
       </group>
     </layout>
   </citation>

@@ -100,56 +100,67 @@
             <text variable="page" prefix=":"/>
           </group>
         </if>
-        <else-if type="chapter paper-conference" match="any">
-          <text macro="title" prefix=" " suffix="."/>
-          <group prefix=" ">
-            <text term="in" text-case="capitalize-first" suffix=": "/>
-            <text macro="editor"/>
-            <text variable="container-title" font-style="italic" prefix=" " suffix="."/>
-            <text variable="volume" prefix="Vol " suffix="."/>
-            <text macro="edition" prefix=" "/>
-            <text variable="collection-title" prefix=" " suffix="."/>
-            <group>
-              <text macro="publisher" prefix=" "/>
-              <group delimiter=":" prefix=", " suffix=".">
-                <date variable="issued">
-                  <date-part name="year"/>
-                </date>
-                <text variable="page" form="long"/>
-              </group>
+<else-if type="chapter paper-conference" match="any">
+<text macro="title" prefix=" " suffix="."/>
+<group prefix=" ">
+<text term="in" text-case="capitalize-first" suffix=": "/>
+<text macro="editor"/>
+<text variable="container-title" font-style="italic" prefix=" " suffix="."/>
+<text variable="volume" prefix="Vol " suffix="."/>
+<text macro="edition" prefix=" "/>
+<text variable="collection-title" prefix=" " suffix="."/>
+<group>
+<text macro="publisher" prefix=" "/>
+<group delimiter=":" prefix=", " suffix=".">
+<date variable="issued">
+<date-part name="year"/>
+</date>
+<text variable="page" form="long"/>
+</group>
+</group>
+</group>
+</else-if>
+<else-if type="thesis" match="any">
+<group delimiter=". " prefix=" " suffix=".">
+<text macro="author"/>
+<text macro="title" font-style="italic"/>
+<text variable="genre" prefix="[" suffix="]"/>
+<text variable="publisher-place" prefix="[" suffix="]"/>
+<text variable="publisher"/>
+<date variable="issued">
+<date-part name="year"/>
+</date>
+</group>
+</else-if>
+<else-if type="webpage post post-weblog" match="any">
+          <group delimiter=". "
+            <text variable="publisher"/>
+            <text variable="title" suffix="."/>
+            <text variable="URL" prefix="Available: "/>
+            <group prefix="[" suffix="]">
+            <text term="accessed" text-case="capitalize-first" suffix=" "/>
+            <date variable="accessed" form="numeric" date-parts="year-month-day"/>
             </group>
           </group>
         </else-if>
-        <else-if type="webpage post post-weblog" match="any">
-          <group delimiter=". " prefix=" ">
-            <text variable="title"/>
-            <text variable="URL"/>
-            <date form="text" variable="issued" prefix="Published "/>
-            <group delimiter=" ">
-              <text term="accessed" text-case="capitalize-first"/>
-              <date form="text" variable="accessed"/>
-            </group>
-          </group>
-        </else-if>
-        <else>
-          <group suffix=".">
-            <text macro="title" prefix=" "/>
-            <text macro="editor" prefix=" "/>
-          </group>
-          <group prefix=" ">
-            <text variable="container-title" form="short" strip-periods="true" font-style="italic"/>
-            <group delimiter=";" prefix=" ">
-              <date variable="issued">
-                <date-part name="year"/>
-              </date>
-              <group>
-                <text variable="volume"/>
-              </group>
-            </group>
-            <text variable="page" prefix=":"/>
-          </group>
-        </else>
-      </choose>
-    </layout>
-  </bibliography>
+<else>
+<group suffix=".">
+<text macro="author"/>
+<text macro="title" prefix=" "/>
+<text variable="container-title" form="short" strip-periods="true" font-style="italic" prefix=" "/>
+<group delimiter=";" prefix=" ">
+<date variable="issued">
+<date-part name="year"/>
+</date>
+<group>
+<text variable="volume"/>
+<text variable="issue" prefix="(" suffix=")"/>
+</group>
+</group>
+<text variable="page" prefix=":"/>
+</group>
+</else>
+</choose>
+</layout>
+</bibliography>
 </style>

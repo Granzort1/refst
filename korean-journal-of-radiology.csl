@@ -71,7 +71,7 @@
   </macro>
   <citation collapse="citation-number">
     <sort>
-      <key variable="citation-number"/>
+      <key variable="citation-number" vertical-align="sup"/>
     </sort>
     <layout delimiter=", " prefix="(" suffix="">
       <text variable="citation-number"/>

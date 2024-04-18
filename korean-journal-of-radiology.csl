@@ -71,10 +71,10 @@
   </macro>
   <citation collapse="citation-number">
     <sort>
-      <key variable="citation-number" vertical-align="sup"/>
+      <key variable="citation-number"/>
     </sort>
     <layout delimiter=", " prefix="(" suffix="">
-      <text variable="citation-number"/>
+      <text variable="citation-number" vertical-align="sup"/>
       <group>
         <label variable="locator" form="short" strip-periods="true"/>
         <text variable="locator"/>

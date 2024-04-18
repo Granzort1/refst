@@ -137,7 +137,6 @@
             <text variable="publisher"/>
             <text variable="title" suffix="."/>
             <text variable="URL" prefix="Available: "/>
-            <group prefix="[" suffix="]">
               <date variable="accessed" prefix="[accessed " suffix="]" delimiter=" ">
                 <date-part name="day" suffix=" "/>
                 <date-part name="month" form="long" suffix=" "/>
